@@ -31,11 +31,11 @@ def summarize(sum_dict):
 if __name__ == "__main__":
     sum_dict = {}
     log_dict = {}
-    schedule.every().day.at("11:43").do(summarize, sum_dict)
+    schedule.every().day.at("23:59").do(summarize, sum_dict)
     while 1:
         schedule.run_pending()
         sum_dict, log_dict = track_activity(sum_dict, log_dict)
         print("\n------------------------------------")
         for key, value in sum_dict.items():
-            print(key, ' : ', value)
+            print(key, " : ", value)
         print("------------------------------------\n")
